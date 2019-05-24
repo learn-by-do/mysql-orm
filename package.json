@@ -1,0 +1,46 @@
+{
+  "name": "mysql-orm",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "repository": "",
+  "author": "NoName4Me <anich.evas@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn lint && rollup -c",
+    "lint": "eslint --cache --fix --ext .js ./src;exit 0",
+    "lint:test": "eslint --cache --fix --ext .js ./test;exit 0",
+    "test": "jest --detectOpenHandles ./test",
+    "cov": "yarn test --coverage",
+    "td": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "lint-staged"
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "mysql2": "^1.6.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.3.1",
+    "jest": "^24.5.0",
+    "lint-staged": "^8.1.5",
+    "rollup": "^1.6.0",
+    "rollup-plugin-eslint": "^5.0.0",
+    "rollup-plugin-uglify": "^6.0.2"
+  }
+}
